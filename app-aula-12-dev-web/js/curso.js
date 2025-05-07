@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const idCurso = document.getElementById("idCurso").value.trim();
+        const cursoId = document.getElementById("idCurso").value.trim();
         const nomeCurso = document.getElementById("cursoNome").value.trim();
         const duracaoCurso = document.getElementById("cursoDuracao").value.trim();
         const descricaoCurso = document.getElementById("cursoDescricao").value.trim();
 
-        if (!idCurso || !nomeCurso || !duracaoCurso || !descricaoCurso) {
+        if (!cursoId || !nomeCurso || !duracaoCurso || !descricaoCurso) {
             alert("Preencha todos os campos!");
             return;
         }
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (cursoEditando !== null) {
             // Se estiver editando, atualiza os dados do curso existente
             cursos[cursoEditando] = {
-                id: idCurso,
+                id: cursoId,
                 nome: nomeCurso,
                 duracao: duracaoCurso,
                 descricao: descricaoCurso,
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             // Adiciona um novo curso
             cursos.push({
-                id: idCurso,
+                id: cursoId,
                 nome: nomeCurso,
                 duracao: duracaoCurso,
                 descricao: descricaoCurso,
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function atualizarTabela() {
-        tabela.innerHTML = ""; // Limpa a tabela antes de preencher com novos dados
+        tabela.innerHTML = ""; 
 
         cursos.forEach((curso, index) => {
             const linha = document.createElement("tr");
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function editarCurso(index) {
         const curso = cursos[index];
 
-        document.getElementById("idCurso").value = curso.id;
+        document.getElementById("cursoId").value = curso.id;
         document.getElementById("cursoNome").value = curso.nome;
         document.getElementById("cursoDuracao").value = curso.duracao;
         document.getElementById("cursoDescricao").value = curso.descricao;
