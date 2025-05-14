@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let cursos = [];
     let cursoEditando = null; // Armazena o índice do curso que está sendo editado
 
+    const cursosSalvos = localStorage.getItem("cursos");
+    if (cursosSalvos) {
+        cursos = JSON.parse(cursosSalvos); // Converte de texto para objeto
+    }
+
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
