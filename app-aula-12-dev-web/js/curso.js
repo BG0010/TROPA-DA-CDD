@@ -62,12 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 <td>${curso.id}</td>
                 <td>${curso.nome}</td>
                 <td>${curso.duracao} horas</td>
+                <td>${curso.descricao}</td>
                 <td>
-                    <button class="details-btn">Detalhes</button>
-                    <button class="edit-btn">Editar</button>
-                    <button class="delete-btn">Excluir</button>
-                </td>
-            `;
+                <button class="details-btn">Detalhes</button>
+                <button class="edit-btn">Editar</button>
+                <button class="delete-btn">Excluir</button>
+    </td>
+`;
 
             // Exibir detalhes do curso na modal
             linha.querySelector(".details-btn").addEventListener("click", function () {
